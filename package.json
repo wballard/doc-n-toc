@@ -1,0 +1,23 @@
+{
+  "name": "doc-n-toc",
+  "version": "0.0.0",
+  "description": "Build a simple, slick, single page manual for your project with Markdown",
+  "main": "index.js",
+  "scripts": {
+    "test": "./bin/doc-n-toc ./manual.md"
+  },
+  "keywords": [
+    "TOC",
+    "markdown",
+    "gh-pages",
+    "manual"
+  ],
+  "author": "Will Ballard",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "coffee-script": "~1.6.3",
+    "docopt": "~0.4.0",
+    "inliner": "~0.1.15",
+    "harp": "~0.9.3"
+  }
+}
