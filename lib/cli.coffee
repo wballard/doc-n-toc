@@ -37,6 +37,7 @@ for file in options['<markdown_file>']
 fs.writeFileSync path.join(work_dir, 'harp.json'), JSON.stringify
   globals:
     title: options['--title'] or 'Documentation'
+    copyright: new Date().getYear() + 1900
 
 harp.compile work_dir, path.join(work_dir, 'build'), (err) ->
   if err

@@ -2,6 +2,7 @@
 html
   head
     title= title
+    meta(charset="utf-8")
     link(rel="stylesheet", href="main.css")
     script(src="javascript/jquery.min.js")
     script(src="javascript/highlight.min.js")
@@ -19,4 +20,5 @@ html
     article(class="main", id="main")
       != yield
       footer
-        p Copyright &copy 2013
+        p Copyright &copy;
+          =copyright
