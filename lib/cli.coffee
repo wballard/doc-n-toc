@@ -11,7 +11,7 @@ doc = """
 #{pkg.description}
 
 Usage:
-  doc-n-toc <markdown_file>... --title=<title>
+  doc-n-toc <markdown_file>... [--title=<title>]
   doc-n-toc -h | --help | --version
 
 Description:
