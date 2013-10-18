@@ -10,6 +10,7 @@ git checkout --orphan gh-pages
 doc-n-toc manual.md --title MyProject > index.html
 git add manual.md index.html
 git commit -m 'yep, simple gh pages'
+git push --set-upstream origin gh-pages
 ```
 
 And done. Fire up your browser at `http://[username].github.io/[repo]`
