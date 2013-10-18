@@ -4,9 +4,9 @@ html
     title= title
     link(rel="stylesheet", href="main.css")
     script(src="javascript/jquery.min.js")
+    script(src="javascript/highlight.min.js")
     script(src="javascript/bootstrap.min.js")
     script(src="javascript/toc.min.js")
-    script(src="javascript/highlight.js/highlight.pack.js")
     script(src="javascript/main.js")
     meta(name="viewport",content="width=device-width, initial-scale=1, user-scalable=no")
   body
@@ -15,7 +15,6 @@ html
         a(class="navbar-brand", href="index.html")= title
         ul(class="nav navbar-nav")
           li
-            a(href="https://github.com/wballard/starphleet") Source
     nav(class="sidebar-nav sidebar-nav-fixed", id="toc")
     article(class="main", id="main")
       != yield

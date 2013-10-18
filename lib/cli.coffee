@@ -5,6 +5,7 @@ os = require 'os'
 fs = require 'fs'
 wrench = require 'wrench'
 harp = require 'harp'
+Inliner = require 'inliner'
 
 doc = """
 #{pkg.description}
@@ -42,4 +43,5 @@ harp.compile work_dir, path.join(work_dir, 'build'), (err) ->
     console.error err
     process.exit 1
   else
-    console.log fs.readFileSync(path.join(work_dir, 'build', 'index.html'), 'utf8')
+    new Inliner 'file://' + path.join(work_dir, 'build', 'index.html'), (html) ->
+      console.log html
