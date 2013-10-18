@@ -1,6 +1,6 @@
 {
   "name": "doc-n-toc",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Build a simple, slick, single page manual for your project with Markdown",
   "bin": {
     "doc-n-toc": "./bin/doc-n-toc"
