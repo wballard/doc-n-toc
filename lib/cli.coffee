@@ -11,7 +11,7 @@ doc = """
 #{pkg.description}
 
 Usage:
-  doc-n-toc <markdown_file>...
+  doc-n-toc <markdown_file>... --title=<title>
   doc-n-toc -h | --help | --version
 
 Description:
@@ -36,7 +36,7 @@ for file in options['<markdown_file>']
 
 fs.writeFileSync path.join(work_dir, 'harp.json'), JSON.stringify
   globals:
-    title: options['title'] or 'Documentation'
+    title: options['--title'] or 'Documentation'
 
 harp.compile work_dir, path.join(work_dir, 'build'), (err) ->
   if err
