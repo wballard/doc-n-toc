@@ -11,7 +11,7 @@ doc = """
 #{pkg.description}
 
 Usage:
-  doc-n-toc <markdown_file>... [--title=<title>]
+  doc-n-toc <markdown_file>... [--css=<css>] [--title=<title>]
   doc-n-toc -h | --help | --version
 
 Description:
@@ -34,9 +34,15 @@ wrench.copyDirSyncRecursive template, work_dir, forceDelete: true
 for file in options['<markdown_file>']
   fs.appendFileSync path.join(work_dir, 'public', 'index.md'), fs.readFileSync(file)
 
+if options['--css']
+  for file in options['--css']
+    cssFile = path.basename options['--css']
+    fs.appendFileSync path.join(work_dir, 'public', cssFile), fs.readFileSync(options['--css'])
+
 fs.writeFileSync path.join(work_dir, 'harp.json'), JSON.stringify
   globals:
     title: options['--title'] or 'Documentation'
+    mycss: "#{path.basename(options['--css'], '.less')}.css" or null
     copyright: new Date().getYear() + 1900
 
 harp.compile work_dir, path.join(work_dir, 'build'), (err) ->
